@@ -86,6 +86,9 @@ extension MainView {
                 .resizable()
                 .scaledToFill()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .overlay {
+                    Color.black.opacity(product.productLeft == 0 ? 0.4 : 0)
+                }
                 .padding(.bottom, 10)
             
             Text("\(product.productName)")
