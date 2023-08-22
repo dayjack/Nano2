@@ -31,7 +31,7 @@ struct Nano2App: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                ContentView()
+                SignInView()
                     .environmentObject(fireStoreViewModel)
             }
         }

@@ -28,7 +28,7 @@ struct MainView: View {
                     ForEach(Array(fireStoreViewModel.allProductsDic.keys.sorted(by: <)), id: \.self) { key in
                         if let product = fireStoreViewModel.allProductsDic[key] {
                             NavigationLink {
-                                ProductDetail(pid: key)
+                                ProductDetailView(pid: key)
                                     .environmentObject(fireStoreViewModel)
                             } label: {
                                 productItemView(product: product)
@@ -77,10 +77,10 @@ extension MainView {
                 .placeholder { _ in
                     Color.gray
                 }
-                .onSuccess { r in //성공
+                .onSuccess { r in
                     Log("King succes: \(r)")
                 }
-                .onFailure { e in //실패
+                .onFailure { e in
                     Log("King failure: \(e)")
                 }
                 .resizable()

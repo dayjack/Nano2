@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct ProductDetail: View {
+struct ProductDetailView: View {
     
     var pid = ""
     @EnvironmentObject var fireStoreViewModel: FireStoreViewModel
@@ -65,5 +65,5 @@ struct ProductDetail: View {
 }
 
 #Preview {
-    ProductDetail()
+    ProductDetailView()
 }
