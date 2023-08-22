@@ -30,6 +30,7 @@ struct MyPageView: View {
             } label: {
                 signButton(text: "유저 정보 수정하기")
             }
+            .opacity(isFirstTab ? 0 : 1)
             Spacer()
         }
         .edgesIgnoringSafeArea(.horizontal)
