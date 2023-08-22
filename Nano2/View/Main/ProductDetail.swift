@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductDetail: View {
     
     var pid = ""
     @EnvironmentObject var fireStoreViewModel: FireStoreViewModel
-    @AppStorage("uid") var uid = ""
+    @AppStorage("firebaseuid") var firebaseuid = ""
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -21,7 +22,20 @@ struct ProductDetail: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 24))
                 .bold()
-            Color.gray.frame(height: 400)
+            
+            KFImage(URL(string: "\(fireStoreViewModel.product.imageUrl)"))
+                .placeholder { _ in
+                    Color.gray
+                }
+                .onSuccess { r in //성공
+                    Log("King succes: \(r)")
+                }
+                .onFailure { e in //실패
+                    Log("King failure: \(e)")
+                }
+                .resizable()
+                .scaledToFill()
+                .frame(height: 400)
                 .padding(.bottom, 20)
             Text(fireStoreViewModel.product.productDetail)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -34,7 +48,7 @@ struct ProductDetail: View {
                 .bold()
             Button {
                 Task {
-                    await fireStoreViewModel.productBuy(uid: uid, pid: pid)
+                    await fireStoreViewModel.productBuy(uid: firebaseuid, pid: pid)
                     await fireStoreViewModel.fetchAllProductsDic()
                     dismiss()
                 }

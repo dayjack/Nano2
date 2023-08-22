@@ -22,18 +22,15 @@ struct Nano2App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     @AppStorage("uid") var uid = ""
+    @AppStorage("firebaseuid") var firebaseuid = ""
+    
     @StateObject var fireStoreViewModel: FireStoreViewModel = FireStoreViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                if uid == "" {
-                    ContentView()
-                } else {
-                    TabBarView()
-                        .environmentObject(fireStoreViewModel)
-                }
-                
+                ContentView()
+                    .environmentObject(fireStoreViewModel)
             }
         }
     }
@@ -48,3 +45,5 @@ public func Log<T>(_ object: T?, filename: String = #file, line: Int = #line, fu
     }
 #endif
 }
+
+

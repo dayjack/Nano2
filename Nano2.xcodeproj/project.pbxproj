@@ -16,11 +16,13 @@
 		78B839FE2A8DB0DB00DCEBF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B839FD2A8DB0DB00DCEBF5 /* ContentView.swift */; };
 		78B83A002A8DB0DE00DCEBF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B839FF2A8DB0DE00DCEBF5 /* Assets.xcassets */; };
 		78B83A032A8DB0DE00DCEBF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B83A022A8DB0DE00DCEBF5 /* Preview Assets.xcassets */; };
-		78B83A0C2A8DB90900DCEBF5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B83A0B2A8DB90900DCEBF5 /* SignUpView.swift */; };
 		78B83A0F2A8DCD5100DCEBF5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B83A0E2A8DCD5100DCEBF5 /* MainView.swift */; };
-		78C846262A9325C4006AF3A2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C846252A9325C4006AF3A2 /* SignInView.swift */; };
 		78C8462D2A93267C006AF3A2 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8462C2A93267C006AF3A2 /* ViewExtension.swift */; };
 		78C8462F2A932888006AF3A2 /* SignInputData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8462E2A932888006AF3A2 /* SignInputData.swift */; };
+		78E5EFC52A94AEC900BEFC86 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 78E5EFC42A94AEC900BEFC86 /* FirebaseStorage */; };
+		78E5EFC82A94AF3800BEFC86 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 78E5EFC72A94AF3800BEFC86 /* Kingfisher */; };
+		78E5EFCB2A94C08300BEFC86 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 78E5EFCA2A94C08300BEFC86 /* FirebaseAuth */; };
+		78E5EFCD2A94C1E300BEFC86 /* AppleLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5EFCC2A94C1E300BEFC86 /* AppleLoginViewModel.swift */; };
 		78E836C12A92F52100172768 /* AllProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E836C02A92F52100172768 /* AllProduct.swift */; };
 		78EF1DA22A8F139C0061F4EA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 78EF1DA12A8F139C0061F4EA /* FirebaseFirestore */; };
 		78EF1DA52A8F152A0061F4EA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EF1DA42A8F152A0061F4EA /* Product.swift */; };
@@ -42,11 +44,11 @@
 		78B839FD2A8DB0DB00DCEBF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78B839FF2A8DB0DE00DCEBF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78B83A022A8DB0DE00DCEBF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		78B83A0B2A8DB90900DCEBF5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		78B83A0E2A8DCD5100DCEBF5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		78C846252A9325C4006AF3A2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		78C8462C2A93267C006AF3A2 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		78C8462E2A932888006AF3A2 /* SignInputData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInputData.swift; sourceTree = "<group>"; };
+		78E5EFC92A94C04D00BEFC86 /* Nano2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano2.entitlements; sourceTree = "<group>"; };
+		78E5EFCC2A94C1E300BEFC86 /* AppleLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginViewModel.swift; sourceTree = "<group>"; };
 		78E836C02A92F52100172768 /* AllProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProduct.swift; sourceTree = "<group>"; };
 		78EF1DA42A8F152A0061F4EA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		78EF1DA62A8F15F40061F4EA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -61,7 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E5EFC82A94AF3800BEFC86 /* Kingfisher in Frameworks */,
 				78EF1DA22A8F139C0061F4EA /* FirebaseFirestore in Frameworks */,
+				78E5EFC52A94AEC900BEFC86 /* FirebaseStorage in Frameworks */,
+				78E5EFCB2A94C08300BEFC86 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,7 @@
 			children = (
 				78B839FA2A8DB0DB00DCEBF5 /* Nano2 */,
 				78B839F92A8DB0DB00DCEBF5 /* Products */,
+				78E5EFC32A94AEC900BEFC86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +93,7 @@
 		78B839FA2A8DB0DB00DCEBF5 /* Nano2 */ = {
 			isa = PBXGroup;
 			children = (
+				78E5EFC92A94C04D00BEFC86 /* Nano2.entitlements */,
 				78B839FB2A8DB0DB00DCEBF5 /* Nano2App.swift */,
 				78EF1DAA2A8F1E580061F4EA /* GoogleService-Info.plist */,
 				78C846272A932641006AF3A2 /* Global */,
@@ -113,7 +120,6 @@
 			children = (
 				78B839FD2A8DB0DB00DCEBF5 /* ContentView.swift */,
 				789C75232A9353DE004FA5BD /* TabBarView.swift */,
-				78EF377A2A94A18500529A43 /* Sign */,
 				78EF377B2A94A1A400529A43 /* Main */,
 				78EF377C2A94A1BA00529A43 /* MyPage */,
 			);
@@ -127,6 +133,13 @@
 				786958632A9448D8003A3549 /* StringExtensnion.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		78E5EFC32A94AEC900BEFC86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		78E836BF2A92EFBE00172768 /* Protocol */ = {
@@ -153,17 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				78EF37742A949E9500529A43 /* FireStoreViewModel.swift */,
+				78E5EFCC2A94C1E300BEFC86 /* AppleLoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		78EF377A2A94A18500529A43 /* Sign */ = {
-			isa = PBXGroup;
-			children = (
-				78C846252A9325C4006AF3A2 /* SignInView.swift */,
-				78B83A0B2A8DB90900DCEBF5 /* SignUpView.swift */,
-			);
-			path = Sign;
 			sourceTree = "<group>";
 		};
 		78EF377B2A94A1A400529A43 /* Main */ = {
@@ -202,6 +207,9 @@
 			name = Nano2;
 			packageProductDependencies = (
 				78EF1DA12A8F139C0061F4EA /* FirebaseFirestore */,
+				78E5EFC42A94AEC900BEFC86 /* FirebaseStorage */,
+				78E5EFC72A94AF3800BEFC86 /* Kingfisher */,
+				78E5EFCA2A94C08300BEFC86 /* FirebaseAuth */,
 			);
 			productName = Nano2;
 			productReference = 78B839F82A8DB0DB00DCEBF5 /* Nano2.app */;
@@ -233,6 +241,7 @@
 			mainGroup = 78B839EF2A8DB0DB00DCEBF5;
 			packageReferences = (
 				78EF1D882A8F139C0061F4EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				78E5EFC62A94AF3700BEFC86 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 78B839F92A8DB0DB00DCEBF5 /* Products */;
 			projectDirPath = "";
@@ -269,7 +278,7 @@
 				78EF1DA52A8F152A0061F4EA /* Product.swift in Sources */,
 				78EF37772A949F0C00529A43 /* UserProcotol.swift in Sources */,
 				78EF37792A949FB600529A43 /* ProductProtocol.swift in Sources */,
-				78B83A0C2A8DB90900DCEBF5 /* SignUpView.swift in Sources */,
+				78E5EFCD2A94C1E300BEFC86 /* AppleLoginViewModel.swift in Sources */,
 				786958642A9448D8003A3549 /* StringExtensnion.swift in Sources */,
 				78C8462F2A932888006AF3A2 /* SignInputData.swift in Sources */,
 				78C8462D2A93267C006AF3A2 /* ViewExtension.swift in Sources */,
@@ -277,7 +286,6 @@
 				789C75262A935624004FA5BD /* MyPageView.swift in Sources */,
 				789C75222A934FA8004FA5BD /* ProductDetail.swift in Sources */,
 				78EF37752A949E9500529A43 /* FireStoreViewModel.swift in Sources */,
-				78C846262A9325C4006AF3A2 /* SignInView.swift in Sources */,
 				789C75242A9353DE004FA5BD /* TabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano2/Nano2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano2/Preview Content\"";
@@ -420,6 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano2/Nano2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano2/Preview Content\"";
@@ -450,6 +461,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,6 +500,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		78E5EFC62A94AF3700BEFC86 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.0;
+			};
+		};
 		78EF1D882A8F139C0061F4EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -499,6 +519,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		78E5EFC42A94AEC900BEFC86 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78EF1D882A8F139C0061F4EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		78E5EFC72A94AF3800BEFC86 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78E5EFC62A94AF3700BEFC86 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		78E5EFCA2A94C08300BEFC86 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78EF1D882A8F139C0061F4EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		78EF1DA12A8F139C0061F4EA /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 78EF1D882A8F139C0061F4EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

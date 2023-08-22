@@ -12,7 +12,7 @@ struct MyPageView: View {
     @EnvironmentObject var fireStoreViewModel: FireStoreViewModel
     
     @State var isFirstTab = true
-    @AppStorage("uid") var uid = ""
+    @AppStorage("firebaseuid") var firebaseuid = ""
     
     var body: some View {
         
@@ -28,8 +28,8 @@ struct MyPageView: View {
         }
         .edgesIgnoringSafeArea(.horizontal)
         .task {
-            await fireStoreViewModel.fetchUser(uid: uid)
-            await fireStoreViewModel.fetchUserPurchaseList(uid: uid)
+            await fireStoreViewModel.fetchUser(uid: firebaseuid)
+            await fireStoreViewModel.fetchUserPurchaseList(uid: firebaseuid)
         }
     }
 }

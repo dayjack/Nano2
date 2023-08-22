@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MainView: View {
     
@@ -14,7 +15,8 @@ struct MainView: View {
         GridItem(.flexible())
     ]
     @EnvironmentObject var fireStoreViewModel: FireStoreViewModel
-    @AppStorage("uid") var uid = ""
+    
+    @AppStorage("firebaseuid") var firebaseuid = ""
     
     var body: some View {
         VStack {
@@ -65,7 +67,20 @@ extension MainView {
     
     func productItemView(product: AllProduct) -> some View {
         VStack {
-            Color.gray.frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            KFImage(URL(string: "\(product.imageUrl)"))
+                .placeholder { _ in
+                    Color.gray
+                }
+                .onSuccess { r in //성공
+                    Log("King succes: \(r)")
+                }
+                .onFailure { e in //실패
+                    Log("King failure: \(e)")
+                }
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.bottom, 10)
             
             Text("\(product.productName)")
