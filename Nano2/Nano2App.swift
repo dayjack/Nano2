@@ -23,6 +23,8 @@ struct Nano2App: App {
 
     @AppStorage("uid") var uid = ""
     @AppStorage("firebaseuid") var firebaseuid = ""
+    @AppStorage("nickname") var nickname = ""
+    @AppStorage("email") var email = ""
     
     @StateObject var fireStoreViewModel: FireStoreViewModel = FireStoreViewModel()
     

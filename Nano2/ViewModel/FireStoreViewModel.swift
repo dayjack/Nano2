@@ -26,6 +26,23 @@ class FireStoreViewModel: ObservableObject {
 
 // MARK: - UserProtocol
 extension FireStoreViewModel: UserProcotol {
+    
+    func isUserDataExist(uid: String) async -> Bool {
+        do {
+            
+            let docRef = try await db.collection("Users").document(uid).getDocument()
+            guard let data = docRef.data() else {
+                Log("UserData not exist")
+                return false
+            }
+            Log("UserData exist")
+            return true
+        } catch {
+            Log("\(error)")
+            return false
+        }
+    }
+    
     @MainActor
     func fetchAllUsers() async {
         do {
@@ -59,6 +76,11 @@ extension FireStoreViewModel: UserProcotol {
     @MainActor
     func addNewUser(user: User, uid: String, completion: @escaping () -> Void) async {
         
+        if await isUserDataExist(uid: uid) {
+            completion()
+            return
+        }
+        
         let data = [
             "address": user.address,
             "email": user.email,
@@ -70,6 +92,24 @@ extension FireStoreViewModel: UserProcotol {
             try await db.collection("Users").document(uid).setData(data)
             Log("Successfully written!")
             completion()
+        } catch {
+            Log(error)
+        }
+    }
+    
+    @MainActor
+    func updateUser(uid: String) async {
+        
+        let data = [
+            "address": user.address,
+            "email": user.email,
+            "nickname": user.nickname,
+            "point": user.point
+        ] as [String: Any]
+        
+        do {
+            try await db.collection("Users").document(uid).setData(data)
+            Log("Successfully update!")
         } catch {
             Log(error)
         }

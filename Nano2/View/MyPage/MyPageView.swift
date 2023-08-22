@@ -10,7 +10,6 @@ import SwiftUI
 struct MyPageView: View {
     
     @EnvironmentObject var fireStoreViewModel: FireStoreViewModel
-    
     @State var isFirstTab = true
     @AppStorage("firebaseuid") var firebaseuid = ""
     
@@ -22,7 +21,14 @@ struct MyPageView: View {
             if isFirstTab {
                 shoppingList()
             } else {
-                myInfo(user: fireStoreViewModel.user)
+                myInfo(user: $fireStoreViewModel.user)
+            }
+            Button {
+                Task {
+                    await fireStoreViewModel.updateUser(uid: firebaseuid)
+                }
+            } label: {
+                signButton(text: "유저 정보 수정하기")
             }
             Spacer()
         }
@@ -107,7 +113,7 @@ extension MyPageView {
     }
     
     @ViewBuilder
-    func myInfo(user: User) -> some View {
+    func myInfo(user: Binding<User>) -> some View {
         VStack {
             infoForm(title: "이메일", context: user.email)
             infoForm(title: "닉네임", context: user.nickname)
@@ -116,11 +122,11 @@ extension MyPageView {
     }
     
     @ViewBuilder
-    func infoForm(title: String, context: String) -> some View {
+    func infoForm(title: String, context: Binding<String>) -> some View {
         HStack {
             Text(title)
                 .bold()
-            Text(context)
+            TextField("내용 수정 가능", text: context)
             Spacer()
         }
         .padding(.horizontal, 30)

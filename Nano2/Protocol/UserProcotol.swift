@@ -23,4 +23,9 @@ protocol UserProcotol {
     
     @MainActor
     func fetchUserPurchaseList(uid: String) async
+    
+    func isUserDataExist(uid: String) async -> Bool
+    
+    @MainActor
+    func updateUser(uid: String) async
 }

@@ -18,6 +18,8 @@ struct ContentView: View {
     
     @AppStorage("uid") var uid = ""
     @AppStorage("firebaseuid") var firebaseuid = ""
+    @AppStorage("nickname") var nickname = ""
+    @AppStorage("email") var email = ""
     
     var body: some View {
         ZStack {
@@ -34,21 +36,28 @@ struct ContentView: View {
                     switch result {
                     case .success(let user):
                         Task {
+                        
                             guard let credential = user.credential as? ASAuthorizationAppleIDCredential else {
                                 Log("error with firebase")
                                 return
                             }
                             if let fullName = credential.fullName {
-                                Log("Full Name: \(fullName.givenName ?? "") \(fullName.familyName ?? "")")
+                                self.nickname = "\(fullName)"
+                                Log(fullName)
                             }
                             if let email = credential.email {
-                                Log("Email: \(email)")
+                                self.email = "\(email)"
+                                Log(email)
                             }
+                            Log(self.nickname)
+                            Log(self.email)
                             Log(credential.user)
                             await appleLoginViewModel.authenticate(credential: credential)
                             self.uid = credential.user
                             self.firebaseuid = appleLoginViewModel.firebaseuid
-                            goTab = true
+                            await fireStoreViewModel.addNewUser(user: User(address: "", email: "\(self.email)", nickname: "\(self.nickname)", point: 0), uid: self.firebaseuid) {
+                                goTab = true
+                            }
                         }
                     case .failure(let error):
                         Log(error.localizedDescription)
