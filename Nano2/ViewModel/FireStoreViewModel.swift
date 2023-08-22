@@ -60,12 +60,9 @@ extension FireStoreViewModel: UserProcotol {
     func addNewUser(user: User, uid: String, completion: @escaping () -> Void) async {
         
         let data = [
-            "id": user.id,
             "address": user.address,
             "email": user.email,
-            "grade": user.grade,
             "nickname": user.nickname,
-            "password": user.password,
             "point": user.point
         ] as [String: Any]
         
@@ -75,23 +72,6 @@ extension FireStoreViewModel: UserProcotol {
             completion()
         } catch {
             Log(error)
-        }
-    }
-    
-    @MainActor
-    func checkSignIn(uid: String, userInput: User, completion: @escaping () -> Void) async {
-        do {
-            let docRef = try await db.collection("Users").document(uid).getDocument()
-            
-            let jsonData = try JSONSerialization.data(withJSONObject: docRef.data() ?? [:])
-            let data = try decoder.decode(User.self, from: jsonData)
-            user = data
-            if userInput.id == user.id && userInput.password == user.password {
-                Log("SignIn Success!")
-                completion ()
-            }
-        } catch {
-            Log("\(error)")
         }
     }
     

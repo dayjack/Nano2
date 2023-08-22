@@ -51,7 +51,6 @@ extension MyPageView {
                 .padding(.trailing, 30)
             VStack {
                 Text("\(user.nickname)")
-                Text("\(user.grade)")
                 Text("\(user.point) point")
             }
             Spacer()
@@ -110,7 +109,6 @@ extension MyPageView {
     @ViewBuilder
     func myInfo(user: User) -> some View {
         VStack {
-            infoForm(title: "아이디", context: user.id)
             infoForm(title: "이메일", context: user.email)
             infoForm(title: "닉네임", context: user.nickname)
             infoForm(title: "주소", context: user.address)

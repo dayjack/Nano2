@@ -19,9 +19,6 @@ protocol UserProcotol {
     func addNewUser(user: User, uid: String, completion: @escaping () -> Void) async
     
     @MainActor
-    func checkSignIn(uid: String, userInput: User, completion: @escaping () -> Void) async
-    
-    @MainActor
     func fetchPurchaseList(uid: String) async
     
     @MainActor
