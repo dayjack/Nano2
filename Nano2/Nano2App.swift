@@ -41,9 +41,9 @@ struct Nano2App: App {
 public func Log<T>(_ object: T?, filename: String = #file, line: Int = #line, funcName: String = #function) {
 #if DEBUG
     if let obj = object {
-        print("\(Date()) \(filename.components(separatedBy: "/").last ?? "")(\(line)) : \(funcName) : \(obj)")
+        print("\(filename.components(separatedBy: "/").last ?? "")(\(line)) : \(funcName) : \(obj)")
     } else {
-        print("\(Date()) \(filename.components(separatedBy: "/").last ?? "")(\(line)) : \(funcName) : nil")
+        print("\(filename.components(separatedBy: "/").last ?? "")(\(line)) : \(funcName) : nil")
     }
 #endif
 }

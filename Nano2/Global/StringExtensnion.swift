@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 extension String {
     static func createRandomString(length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
