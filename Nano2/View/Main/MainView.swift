@@ -25,7 +25,7 @@ struct MainView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     
-                    ForEach(Array(fireStoreViewModel.allProductsDic.keys), id: \.self) { key in
+                    ForEach(Array(fireStoreViewModel.allProductsDic.keys.sorted(by: <)), id: \.self) { key in
                         if let product = fireStoreViewModel.allProductsDic[key] {
                             NavigationLink {
                                 ProductDetail(pid: key)
@@ -37,6 +37,11 @@ struct MainView: View {
                             .disabled(product.productLeft == 0)
                         }
                     }
+                }
+            }
+            .refreshable {
+                Task {
+                    await fireStoreViewModel.fetchAllProductsDic()
                 }
             }
             Spacer()
