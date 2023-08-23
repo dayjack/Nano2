@@ -66,4 +66,5 @@ struct ProductDetailView: View {
 
 #Preview {
     ProductDetailView()
+        .environmentObject(FireStoreViewModel())
 }
